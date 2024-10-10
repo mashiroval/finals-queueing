@@ -9,8 +9,8 @@ const Frame1 =  () =>{
         <>
             <form>
 
-                <img src={logo} className="App-logo" alt="logo" />
                 
+
                 <div className='ADMINbtn'><button>ADMIN</button></div>
                 <div className='USERbtn'><button>USER</button></div>
                 <div className='TVbtn'><button>TV</button></div>
