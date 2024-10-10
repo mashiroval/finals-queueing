@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          TEST GELO
+          TEST BINS
         </p>
         <a
           className="App-link"
