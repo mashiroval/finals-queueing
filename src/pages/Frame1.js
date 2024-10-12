@@ -8,19 +8,19 @@ function Frame1() {
     <div>
       <h3>Select</h3>
       <div>
-        <button>
-          <Link to={"/admin"}>Admin</Link>
-        </button>
+        <Link to="/admin">
+          <button>Admin</button>
+        </Link>
       </div>
       <div>
-        <button>
-          <Link to={"/user"}>User</Link>
-        </button>
+        <Link to="/user">
+          <button>User</button>
+        </Link>
       </div>
       <div>
-        <button>
-          <Link to={"/tv"}>TV</Link>
-        </button>
+        <Link to="/tv">
+          <button>TV</button>
+        </Link>
       </div>
     </div>
   );

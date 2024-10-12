@@ -10,24 +10,24 @@ function UserPage() {
       </Link>
 
       <div>
-        <button>
-          <Link to={"/register"}>OPEN AN ACCOUNT</Link>
-        </button>
+        <Link to="/register">
+          <button>OPEN AN ACCOUNT</button>
+        </Link>
       </div>
       <div>
-        <button>
-          <Link to={"/withdraw"}>WITHDRAW</Link>
-        </button>
+        <Link to="/withdraw">
+          <button>WITHDRAW</button>
+        </Link>
       </div>
       <div>
-        <button>
-          <Link to={"/deposit"}>DEPOSIT</Link>
-        </button>
+        <Link to="/deposit">
+          <button>DEPOSIT</button>
+        </Link>
       </div>
       <div>
-        <button>
-          <Link to={"/service"}>CUSTOMER SERVICE</Link>
-        </button>
+        <Link to="/service">
+          <button>CUSTOMER SERVICE</button>
+        </Link>
       </div>
     </div>
   );

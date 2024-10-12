@@ -10,6 +10,11 @@ import WithdrawPage from './pages/WithdrawPage';
 import DepositPage from './pages/DepositPage';
 import CustomerServicePage from './pages/CustomerServicePage';
 
+import RegisterTicketPage from './pages/RegisterTicketPage';
+import WithdrawTicketPage from './pages/WithdrawTicketPage';
+import DepositTicketPage from './pages/DepositTicketPage';
+import CustomerServiceTicketPage from './pages/CustomerServiceTicketPage';
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -51,6 +56,24 @@ const router = createBrowserRouter([
   {
     path: "/service",
     element: <CustomerServicePage/>,
+  },
+
+  // TICKET FRAMES
+  {
+    path: "/register/ticket",
+    element: <RegisterTicketPage/>,
+  },
+  {
+    path: "/withdraw/ticket",
+    element: <WithdrawTicketPage/>,
+  },
+  {
+    path: "/deposit/ticket",
+    element: <DepositTicketPage/>,
+  },
+  {
+    path: "/service/ticket",
+    element: <CustomerServiceTicketPage/>,
   },
 
 ]);
