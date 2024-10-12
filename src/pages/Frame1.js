@@ -8,7 +8,7 @@ function Frame1() {
     <div>
       <h3>Select</h3>
       <div>
-        <Link to="/admin">
+        <Link to="/admin/password">
           <button>Admin</button>
         </Link>
       </div>

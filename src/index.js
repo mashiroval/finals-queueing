@@ -15,10 +15,13 @@ import WithdrawTicketPage from './pages/WithdrawTicketPage';
 import DepositTicketPage from './pages/DepositTicketPage';
 import CustomerServiceTicketPage from './pages/CustomerServiceTicketPage';
 
+import AdminPasswordPage from './pages/AdminPasswordPage';
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 
 
@@ -76,6 +79,11 @@ const router = createBrowserRouter([
     element: <CustomerServiceTicketPage/>,
   },
 
+  //ADMIN FRAMES
+  {
+    path: "/admin/password",
+    element: <AdminPasswordPage/>,
+  },
 ]);
 
 
