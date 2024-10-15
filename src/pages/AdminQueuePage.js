@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from "../logo.png";
+import NavBar from '../components/NavBar';
 
 function AdminQueuePage() {
   return (
     <div>
+         <NavBar/>
       <div className="vlogoadmin">
       <Link to={"/"}>
         <img src={logo} width={250} height={200} alt="Logo" />
