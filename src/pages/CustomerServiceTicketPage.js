@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 function CustomerServiceTicketPage() {
   return (
     <TicketLayout>
-      <div>
-        <div>
-            <Link to="/">
-            <button>DONE</button>
+      <div className="center-container">
+
+        <div className='center-container-next'>
+            <Link to="/user">
+            <button className="dbtns">DONE</button>
             </Link>
         </div>
+
       </div>
     </TicketLayout>
   );

@@ -1,32 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../logo.png";
+import './pagestyles.css';
 
 function UserPage() {
   return (
-    <div>
+    <div className="center-container ">
+      <div className="vlogo">
       <Link to={"/"}>
-        <img src={logo} width={100} height={100} alt="Logo" />
+        <img src={logo} width={250} height={200} alt="Logo" />
       </Link>
+      </div>
+
+      <h3 className="select">Select...</h3>
 
       <div>
         <Link to="/register">
-          <button>OPEN AN ACCOUNT</button>
+          <button className="fbtn">OPEN AN ACCOUNT</button>
         </Link>
       </div>
       <div>
         <Link to="/withdraw">
-          <button>WITHDRAW</button>
+          <button className="fbtn">WITHDRAW</button>
         </Link>
       </div>
       <div>
         <Link to="/deposit">
-          <button>DEPOSIT</button>
+          <button className="fbtn">DEPOSIT</button>
         </Link>
       </div>
       <div>
         <Link to="/service">
-          <button>CUSTOMER SERVICE</button>
+          <button className="fbtn">CUSTOMER SERVICE</button>
         </Link>
       </div>
     </div>

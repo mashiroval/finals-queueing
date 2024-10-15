@@ -4,22 +4,28 @@ import logo from "../logo.png";
 
 function AdminPasswordPage() {
   return (
-    <div>
+    <div className="center-container">
+
       <div>
         <Link to={"/"}>
-          <img src={logo} width={100} height={100} alt="Logo" />
+          <img src={logo} width={250} height={200} alt="Logo" />
         </Link>
       </div>
-      <div>
-        <label>Password</label>
-        <br/>
-        <input type="text" ></input>
+
+      <div className="center-container-next">
+        <div>
+          <label>Password</label>
+          <br />
+          <input className="typings" type="number"></input>
       </div>
+      </div>
+      
       <div>
         <Link to="/admin/home">
-          <button>NEXT</button>
+          <button className="nbtns">NEXT</button>
         </Link>
       </div>
+
     </div>
   );
 }
