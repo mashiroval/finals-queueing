@@ -20,10 +20,13 @@ import AdminHomePage from './pages/AdminHomePage';
 import AdminQueuePage from './pages/AdminQueuePage';
 import AdminStatsPage from './pages/AdminStatsPage';
 
+import TvPage from './pages/TvPage';
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 
 
@@ -46,7 +49,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/tv",
-    element: <div>Hello TV!</div>,
+    element: <TvPage/>,
   },
   // USER FRAMES
   {
