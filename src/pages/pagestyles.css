@@ -1,6 +1,9 @@
 .App {
     width: 1440px;
     height: 1024px;
+}
+
+body{
     background-color: #F8F8F7;
 }
 
@@ -12,9 +15,14 @@
     height: 100vh; /* Full viewport height to center vertically */
 }
 
-/*LOGO*/
+/*LOGO USER*/
 .vlogo{
     
+}
+
+/*LOGO ADMIN*/
+.vlogoadmin{
+
 }
 
 
@@ -99,5 +107,138 @@
     color: white;
     margin-top: 45vh;
     
+}
+
+/*ADMIN*/
+.box1{
+    position: absolute;
+    width: 850px;
+    height: 717px;
+    flex-shrink: 0;
+    background: white;
+    margin-left: 70px;
+}
+
+.box2{
+    position: absolute;
+    width: 688px;
+    height: 717px;
+    flex-shrink: 0;
+    background: white;
+    margin-left: 1000px;
+}
+
+
+.admins1{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-right: 1635px;
+    right: 0; /* This will move it towards the right */
+    font-size: 30px;
+}
+
+.admins2{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-right: 500px;
+    right: 0; /* This will move it towards the right */
+    font-size: 30px;
+}
+
+.admins3{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-right: 650px;
+    right: 0; /* This will move it towards the right */
+    font-size: 30px;
+}
+
+.admins4{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-right: 500px;
+    right: 0; /* This will move it towards the right */
+    font-size: 30px;
+}
+
+.squares1{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    width: 550px;
+    height: 295px;
+    border-radius: 50px;
+    background: #A1A09F;
+    margin-top: 70px;
+    margin-right: 1310px;
+    right: 0; /* This will move it towards the right */
+}
+
+.squares2{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    width: 550px;
+    height: 295px;
+    border-radius: 50px;
+    background: #A1A09F;
+    margin-top: 70px;
+    margin-right: 730px;
+    right: 0; /* This will move it towards the right */
+}
+
+.squares3{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    width: 550px;
+    height: 295px;
+    border-radius: 50px;
+    background: #A1A09F;
+    margin-top: 400px;
+    margin-right: 1310px;
+    right: 0; /* This will move it towards the right */
+}
+
+.squares4{
+    position: absolute; /* Corrected from 'display' to 'position' */
+    width: 550px;
+    height: 295px;
+    border-radius: 50px;
+    background: #A1A09F;
+    margin-top: 400px;
+    margin-right: 730px;
+    right: 0; /* This will move it towards the right */
+}
+
+
+.delete{
+    position: absolute;
+    width: 212px;
+    height: 49px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #000;
+    color: white;
+    margin-top: 225px;
+    margin-left: 30px;
+}
+
+.next{
+    position: absolute;
+    width: 212px;
+    height: 49px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #000;
+    color: white;
+    margin-top: 225px;
+    margin-left: 300px;
+}
+
+.counter{
+    position: absolute;
+    color: black;
+    margin-top: 180px;
+    margin-left: 216px;
+    font-size: 25px;
 }
 
