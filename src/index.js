@@ -16,11 +16,16 @@ import DepositTicketPage from './pages/DepositTicketPage';
 import CustomerServiceTicketPage from './pages/CustomerServiceTicketPage';
 
 import AdminPasswordPage from './pages/AdminPasswordPage';
+import AdminHomePage from './pages/AdminHomePage';
+import AdminQueuePage from './pages/AdminQueuePage';
+import AdminStatsPage from './pages/AdminStatsPage';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
+
 
 
 
@@ -83,6 +88,18 @@ const router = createBrowserRouter([
   {
     path: "/admin/password",
     element: <AdminPasswordPage/>,
+  },
+  {
+    path: "/admin/home",
+    element: <AdminHomePage/>,
+  },
+  {
+    path: "/admin/queue",
+    element: <AdminQueuePage/>,
+  },
+  {
+    path: "/admin/stats",
+    element: <AdminStatsPage/>,
   },
 ]);
 

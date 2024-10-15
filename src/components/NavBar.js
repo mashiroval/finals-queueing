@@ -10,13 +10,13 @@ export default function NavBar() {
       </Link>
       <ul>
         <li>
-          <Link to={"/admin"}>Admin</Link>
+          <Link to={"/admin/home"}>Home</Link>
         </li>
         <li>
-          <Link to={"/user"}>User</Link>
+          <Link to={"/admin/queue"}>Queue</Link>
         </li>
         <li>
-          <Link to={"/tv"}>TV</Link>
+          <Link to={"/admin/stats"}>Stats</Link>
         </li>
       </ul>
     </nav>
