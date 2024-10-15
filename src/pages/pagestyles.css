@@ -44,8 +44,9 @@ body{
     align-items: center;
     flex-shrink: 0;
     border-radius: 50px;
-    border: 2px solid #000;
-    background-color: white;
+    border: 1px solid #000;
+    color: #000;
+    background-color: #F8F8F7;
 }
 
 /*TYPE SPACE*/
@@ -64,7 +65,9 @@ body{
     height: 66px;
     flex-shrink: 0;
     border-radius: 50px;
-    border: 2px solid #000;
+    border: 1px solid #000;
+    color: #000;
+    background-color: #F8F8F7;
     font-size: 25px;
     margin-bottom: 1vh;
 }
