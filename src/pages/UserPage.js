@@ -5,7 +5,7 @@ import './pagestyles.css';
 
 function UserPage() {
   return (
-    <div className="center-container ">
+    <div className="user-container ">
 
     <div className="middlepanel"> 
       <div className="vlogo">

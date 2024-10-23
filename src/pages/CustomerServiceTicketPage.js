@@ -7,11 +7,14 @@ function CustomerServiceTicketPage() {
     <TicketLayout>
       <div className="center-container">
 
-        <div className='center-container-next'>
+    <div class="middlepanel">
+    <div className='center-container-next'>
             <Link to="/user">
             <button className="dbtns">DONE</button>
             </Link>
         </div>
+    </div>
+      
 
       </div>
     </TicketLayout>
