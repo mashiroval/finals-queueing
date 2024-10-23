@@ -1,21 +1,21 @@
 import React from "react";
 import TicketLayout from "../layouts/TicketLayout";
 import { Link } from "react-router-dom";
+import './pagestyles.css';
 
-function CustomerServiceTicketPage() {
+function CustomerServiceTicketPage({ customerServiceTicketCounter }) {
+  const ticketNumber = `C-${String(customerServiceTicketCounter).padStart(3, '0')}`; // Format ticket number
+
   return (
     <TicketLayout>
       <div className="center-container">
+        <h2>{ticketNumber}</h2>
 
-    <div class="middlepanel">
-    <div className='center-container-next'>
-            <Link to="/user">
+        <div className='center-container-next'>
+          <Link to="/user">
             <button className="dbtns">DONE</button>
-            </Link>
+          </Link>
         </div>
-    </div>
-      
-
       </div>
     </TicketLayout>
   );
