@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  name: String,
-  age: Number,
-  email: String
+  ticketnum: String,
+  settled: Boolean,
+  attended: Boolean
 });
 
-const UserModel = mongoose.model("Users", UserSchema);
+const UserModel = mongoose.model("Queue", UserSchema);
 module.exports = UserModel;

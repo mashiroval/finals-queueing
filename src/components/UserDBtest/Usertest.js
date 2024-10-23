@@ -54,7 +54,7 @@ const Usertest = () => {
 
   return (
     <div>
-        <h1>Stand User List</h1>
+        <h1>User List</h1>
         <hr/>
             {users.map(user => (
                 <p key={user._id}>
