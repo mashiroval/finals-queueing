@@ -4,7 +4,7 @@ import logo from "../logo.png";
 
 function TicketLayout({children}) {
   return (
-    <div className="center-container">
+    <div className="ticket-container">
 
     <div>
     <Link to={"/user"}>

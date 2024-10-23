@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .App {
     width: 1440px;
     height: 1024px;
@@ -6,23 +8,65 @@
 body{
     background-color: #F8F8F7;
 }
+*{
+    box-sizing: border-box;
+}
 
-/*CENTER*/
-.center-container {
-    display: flex;
-    flex-direction: column; /* Stack the elements vertically */
-    align-items: center; /* Center horizontally */
+/* BACKGROUND PICTURE */
+
+body{
+    background-image: url(frame1bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     height: 100vh; /* Full viewport height to center vertically */
 }
 
-/*LOGO USER*/
-.vlogo{
-    
+/*CENTER*/
+.center-container{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    height: 650px;
+    width: 650px;
 }
 
-/*LOGO ADMIN*/
-.vlogoadmin{
+/* MIDDLE PANEL */
 
+.middlepanel{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center;
+}
+
+
+/*LOGO*/
+.vlogo{
+   
+}
+
+/* TICKET PAGE */
+
+.ticket-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center;
+}
+
+/* USER PAGE */
+.user-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center;
 }
 
 
@@ -31,23 +75,84 @@ body{
     display: flex;
     flex-direction: column; /* Stack the elements vertically */
     align-items: center; /* Center horizontally */
+    
 }
 
 /*BUTTONS */
-.fbtn{
+.fbtn, .nbtns, .dbtns {
     display: flex;
-    width: 500px;
-    height: 112px;
-    margin-bottom: 20px;
-    padding: 37px 0px 36px 0px;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-radius: 50px;
-    border: 1px solid #000;
-    color: #000;
-    background-color: #F8F8F7;
+
+    position: relative;
+    width: 430px;
+    height: 112px;
+    margin-bottom: 20px;
+    
+    font-size: 23px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    padding: 37px 0px 36px 0px;
+   
+    border-radius: 30px;
+    border: 1px solid #000 ;
+    background: transparent;
+    box-shadow: 0 0 30px rgba(0,0,0,.1);
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
 }
+
+
+.fbtn:before, .nbtns:before,.dbtns:before, .fbtn:after,.nbtns:after,.dbtns:after{
+    content: '';
+    left: -5px;
+    top: 5px;
+    right: -5px;
+    bottom: -5px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: inherit;
+    background-color: #b9922c ;
+    opacity: 0.4;
+    filter: blur(30px);
+    transition: 0.6s;
+}
+
+.fbtn:before, .nbtns:before,.dbtns:before{
+    width: 90px;
+    background: rgba(255,255,255,0.7);
+    translate: translateX(-130px)  skewX(-45deg);
+}
+
+.fbtn:after,.nbtns:after,.dbtns:after{
+    width: 90px;
+    background: rgba(255,255,255,0.6);
+    translate: translateX(-130px) skewX (-45deg);
+}
+
+.fbtn:hover:before, .nbtns:hover:before,.nbtns:hover:before, .fbtn:hover:after,.nbtns:hover:after, .dbtns:hover:after{
+    opacity: 0.6;
+    transform: translateX(320px) skewX(-45deg);
+}
+
+.fbtn:hover, .nbtns:hover, .dbtns:hover{
+    color: #fffefa;
+}
+
+.fbtn:hover:first-child, .nbtns:hover:first-child,.dbtns:hover:first-child {
+    background-size: 400%;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 2%, rgba(233,183,46,1) 52%, rgba(255,255,255,1) 93%);
+}
+.fbtn:hover:last-child, .nbtns:hover:last-child, .dbtns:hover:last-child{
+    background-size: 400%;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 2%, rgba(233,183,46,1) 52%, rgba(255,255,255,1) 93%);
+}
+
 
 /*TYPE SPACE*/
 .type-container{
@@ -70,7 +175,9 @@ body{
     background-color: #F8F8F7;
     font-size: 25px;
     margin-bottom: 1vh;
+    box-shadow: 0 0 30px rgba(255,255,255,.4);
 }
+
 
 /*NEXT AND DONE CONTAINER*/
 .center-container-next{
@@ -80,168 +187,365 @@ body{
     align-items: center; /* Center horizontally */
     margin-top: 10vh;
 }
+/* FRAME BUTTONS */
+.fbtn{
+   
+    position: relative;
+    width: 450px;
+    height: 112px;
+    
+    font-size: 23px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    padding: 37px 0px 36px 0px;
+
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+}
 
 /*NEXT BUTTONS*/
 .nbtns{
-    display: flex;
-    width: 500px;
-    height: 112px;
-    padding: 36px 375px 37px 370px;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 50px;
-    background: #000;
-    font-size: 20px;
-    color: white;  
-    margin-top: 10vh;  
+   
+    position: relative;
+    width: 200px;
+    height: 80px;
+    
+    font-size: 23px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    padding: 37px 0px 36px 0px;
+
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 /*DONE BUTTONS*/
 .dbtns{
-    display: flex;
-    width: 500px;
-    height: 112px;
-    padding: 36px 375px 37px 370px;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 50px;
-    background: #000;
-    font-size: 20px;
-    color: white;
-    margin-top: 45vh;
+    position: relative;
+    width: 200px;
+    height: 80px;
+    
+    font-size: 23px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    padding: 37px 0px 36px 0px;
+
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
     
 }
 
-/*ADMIN*/
-.box1{
+/* ADMIN PAGE */
+
+/* HOME */
+
+.cardcontainer {
+    display:inline-flex;
+    flex-direction: row;
+
+}
+
+/*texts*/
+
+.admins3,.admins4{
     position: absolute;
-    width: 850px;
-    height: 717px;
-    flex-shrink: 0;
-    background: white;
-    margin-left: 70px;
+    right: 570px;
+    top: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    overflow: hidden;
 }
 
-.box2{
-    position: absolute;
-    width: 688px;
-    height: 717px;
-    flex-shrink: 0;
-    background: white;
-    margin-left: 1000px;
+.box1, .box2  {
+
+    /* blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 700px;
+    height: 580px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    --color: rgba(233,183,46,1);
+    
+    left:0;
+    top:0;
+    isolation: isolate;
+
 }
 
-
-.admins1{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    border-radius: 50px;
-    margin-top: 15px;
-    margin-right: 1635px;
-    right: 0; /* This will move it towards the right */
-    font-size: 30px;
+.box1::before, .box2::before, .box1::after, .box2::after{
+content: "";
+position: absolute;
 }
 
-.admins2{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    border-radius: 50px;
-    margin-top: 15px;
-    margin-right: 500px;
-    right: 0; /* This will move it towards the right */
-    font-size: 30px;
+.box1::before, .box2::before{
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(
+        var(--color)0deg,
+        transparent 60deg,
+        transparent 180deg,
+        var(--color)180deg,
+        transparent 240deg
+    );
+    inset: -50%;
+    z-index: -2;
+    animation: border 8s linear infinite;
+
 }
 
-.admins3{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-right: 650px;
-    right: 0; /* This will move it towards the right */
-    font-size: 30px;
+@keyframes border {
+    to{
+        transform: rotateZ(-360deg);
+    }
 }
 
-.admins4{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-right: 500px;
-    right: 0; /* This will move it towards the right */
-    font-size: 30px;
+.box1::after, .box2::after{
+    --inset: 0.25rem;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 20px;
+    inset: var(--inset);
+    z-index: -1;
 }
 
-.squares1{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    width: 550px;
-    height: 295px;
-    border-radius: 50px;
-    background: #A1A09F;
-    margin-top: 70px;
-    margin-right: 1310px;
-    right: 0; /* This will move it towards the right */
-}
-
-.squares2{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    width: 550px;
-    height: 295px;
-    border-radius: 50px;
-    background: #A1A09F;
-    margin-top: 70px;
-    margin-right: 730px;
-    right: 0; /* This will move it towards the right */
-}
-
-.squares3{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    width: 550px;
-    height: 295px;
-    border-radius: 50px;
-    background: #A1A09F;
-    margin-top: 400px;
-    margin-right: 1310px;
-    right: 0; /* This will move it towards the right */
-}
-
-.squares4{
-    position: absolute; /* Corrected from 'display' to 'position' */
-    width: 550px;
-    height: 295px;
-    border-radius: 50px;
-    background: #A1A09F;
-    margin-top: 400px;
-    margin-right: 730px;
-    right: 0; /* This will move it towards the right */
-}
+/* QUEUE */
 
 
-.delete{
-    position: absolute;
-    width: 212px;
-    height: 49px;
-    flex-shrink: 0;
-    border-radius: 50px;
-    background: #000;
-    color: white;
-    margin-top: 225px;
-    margin-left: 30px;
-}
+/* buttons and text */
+.delete , .next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.next{
-    position: absolute;
-    width: 212px;
-    height: 49px;
-    flex-shrink: 0;
-    border-radius: 50px;
-    background: #000;
-    color: white;
-    margin-top: 225px;
-    margin-left: 300px;
+    width:85px;
+    height: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    border: 2px solid rgba(0,0,0,.5);
+    box-shadow: 0 0 30px rgba(255,255,255,.5);
+
+    position: relative;
+    top: 105px;
+    left:140px;
+    
 }
 
 .counter{
     position: absolute;
-    color: black;
-    margin-top: 180px;
-    margin-left: 216px;
-    font-size: 25px;
+    bottom:210px;
+    right: 360px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: large;
+    letter-spacing: 5px;
+    overflow: hidden;
+    
+}
+
+.admins1{
+    position: static;
+    top:10px;
+    letter-spacing: 5px;
+    overflow: hidden;
+}
+
+.admins2{
+    position: absolute;
+    top:10px;
+    letter-spacing: 5px;
+    overflow: hidden;
+}
+
+
+/* serving box */
+
+.servingbox{
+    display: block;
+    position: relative;
+    align-self: flex-start;
+    width:200px;
+    height:30px;
+    left:40px;
+    top:10px;
+}
+
+/* code for div placement side by side*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#column{
+    float: left;
+    flex: 50%;
+}
+
+/* code for grid of 4 counters */
+
+.admin-container{
+    display: inline-grid;
+    grid-template-columns:repeat(2,1fr);
+    justify-content: space-evenly;
+}
+
+.squares1, .squares2, .squares3, .squares4, .squares5{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 500px;
+    height: 280px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    --color: rgba(233,183,46,1);
+   
+    isolation: isolate;
+}
+
+.squares1::before, .squares2::before,.squares3::before, .squares4::before, 
+.squares1::after, .squares2::after,.squares3::after, .squares4::after{
+    content: "";
+    position: absolute;
+    }
+    
+    .squares1::before, .squares2::before,.squares3::before, .squares4::before{
+        width: 200%;
+        height: 200%;
+        background-image: conic-gradient(
+            var(--color)0deg,
+            transparent 60deg,
+            transparent 180deg,
+            var(--color)180deg,
+            transparent 240deg
+        );
+        inset: -50%;
+        z-index: -2;
+        animation: border 8s linear infinite;
+    
+    }
+    
+    @keyframes border {
+        to{
+            transform: rotateZ(-360deg);
+        }
+    }
+    
+    .squares1::after, .squares2::after,.squares3::after, .squares4::after{
+        --inset: 0.25rem;
+        background-color: #fff;
+        opacity: 1;
+        border-radius: 20px;
+        inset: var(--inset);
+        z-index: -1;
+    }
+    
+.squares5{
+    width: 300px;
+    height: 630px;
+}
+
+.squares5:hover{
+    border: 4px solid rgba(185,146,44,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    
+}
+
+/* STATS */
+
+.row-stats{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#column{
+    float: left;
+    flex: 50%;
+}
+
+
+
+.statscalen{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    --color: rgba(233,183,46,1);
+   
+    isolation: isolate;
+}
+
+.statssummary{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 780px;
+    height: 590px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    --color: rgba(233,183,46,1);
+   
+    isolation: isolate;
 }
 
