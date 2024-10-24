@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
   ticketnum: String,
-  settled: Boolean,
-  attended: Boolean
+  showed: String,
+  settled: String
 });
 
 const UserModel = mongoose.model("Queue", UserSchema);
