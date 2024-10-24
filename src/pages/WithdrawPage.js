@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import "./pagestyles.css";
+import logo from "../logo.png";
 
 // Accept ticketCounter and setTicketCounter as props
 function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
@@ -91,6 +92,11 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
   return (
     <UserLayout>
       <div className="center-container">
+
+      <div>
+          <img src={logo} width={250} height={200} alt="Logo" />
+      </div>
+
         <div>
           <h1>WITHDRAW</h1>
         </div>
