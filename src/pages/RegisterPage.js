@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import './pagestyles.css';
@@ -23,7 +23,7 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
     if (firstName.length < 1 || firstName.length > 50) {
       setError("First name must not be empty.");
       e.preventDefault(); // Prevent navigation if validation fails
-    } else if (lastName.length < 2 || lastName.length > 50) {
+    } else if (lastName.length < 1 || lastName.length > 50) {
       setError("Last name must not be empty.");
       e.preventDefault(); // Prevent navigation if validation fails
     } else {
