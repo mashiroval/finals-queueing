@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import './pagestyles.css';
+import logo from "../logo.png";
 
 function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceTicketCounter }) {
   const [accountNumber, setAccountNumber] = useState("");
@@ -59,6 +60,11 @@ function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceT
   return (
     <UserLayout>
       <div className="center-container">
+
+      <div>
+          <img src={logo} width={250} height={200} alt="Logo" />
+      </div>
+
         <div>
           <h1>CUSTOMER SERVICE</h1>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import './pagestyles.css';
+import logo from "../logo.png";
 
 
 function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
@@ -38,6 +39,11 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
   return (
     <UserLayout>
       <div className="center-container">
+
+      <div>
+          <img src={logo} width={250} height={200} alt="Logo" />
+      </div>
+
         <div>
           <h1>OPEN AN ACCOUNT</h1>
         </div>

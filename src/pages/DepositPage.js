@@ -80,6 +80,11 @@ function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Acc
   return (
     <UserLayout>
       <div className="center-container">
+        
+      <div>
+          <img src={logo} width={250} height={200} alt="Logo" />
+      </div>
+
         <div>
           <h1>DEPOSIT</h1>
         </div>
