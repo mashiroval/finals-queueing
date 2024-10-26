@@ -5,13 +5,11 @@ import './pagestyles.css';
 import logo from "../logo.png";
 import axios from 'axios';
 
-
-function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
+function RegisterPage({ registerTicketCounter, setRegisterTicketCounter }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [newUser, setNewUser] = useState({});
   const [users, setUsers] = useState([]);
 
   const fetchUsers = () => {
@@ -24,12 +22,14 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
       });
   };
 
-  const handleCreateUser = () => {
-    axios.post("http://localhost:8000/api/createUser", newUser)
+  const handleCreateUser = (ticketNumber) => {
+    axios.post("http://localhost:8000/api/createUser", {
+      ticketnum: ticketNumber,
+      showed: false,
+      settled: false,
+    })
       .then(() => {
         fetchUsers();
-        setNewUser({ ticketnum: '', showed: '', settled: '' });
-        navigate("/register/ticket");
       })
       .catch((error) => {
         console.log(error);
@@ -44,7 +44,7 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
     if (firstName || lastName) {
       const confirmLeave = window.confirm("You have unsaved changes. Do you really want to go back?");
       if (!confirmLeave) {
-        e.preventDefault(); // Prevent navigation if the user cancels
+        e.preventDefault();
       }
     }
   };
@@ -52,31 +52,25 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
   const handleNextClick = (e) => {
     if (firstName.length < 1 || firstName.length > 50) {
       setError("First name must not be empty.");
-      e.preventDefault(); // Prevent navigation if validation fails
+      e.preventDefault();
     } else if (lastName.length < 1 || lastName.length > 50) {
       setError("Last name must not be empty.");
-      e.preventDefault(); // Prevent navigation if validation fails
+      e.preventDefault();
     } else {
-      setError(""); // Clear any errors if validation passes
-      setRegisterTicketCounter(registerTicketCounter + 1); // Increment ticket counter
-      setNewUser((prev) => ({
-        ...prev,
-        ticketnum: registerTicketCounter,
-        showed: 'false',
-        settled: 'false',
-      }));
-      handleCreateUser();
+      setError("");
+      const updatedTicketCounter = registerTicketCounter + 1;
+      setRegisterTicketCounter(updatedTicketCounter); 
+      handleCreateUser(`R-${String(updatedTicketCounter).padStart(3, '0')}`); 
+      navigate("/register/ticket");
     }
-};
-
+  };
 
   return (
     <UserLayout>
       <div className="center-container">
-
-      <div>
+        <div>
           <img src={logo} width={250} height={200} alt="Logo" />
-      </div>
+        </div>
 
         <div>
           <h1>OPEN AN ACCOUNT</h1>
@@ -111,10 +105,9 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
         {error && <p style={{ color: "red" }}>{error}</p>}
 
         <div>
-            <button className="nbtns" onClick={handleNextClick}>NEXT</button>
+          <button className="nbtns" onClick={handleNextClick}>NEXT</button>
         </div>
 
-        {/* Handle back navigation confirmation */}
         <div>
           <Link to="/user" onClick={handleBackNavigation}>
             <button className="nbtns">GO BACK</button>
