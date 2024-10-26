@@ -3,11 +3,42 @@ import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import './pagestyles.css';
 import logo from "../logo.png";
+import axios from 'axios';
+
 
 function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceTicketCounter }) {
   const [accountNumber, setAccountNumber] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = () => {
+    axios.get("http://localhost:8000/api/getUsers")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleCreateUser = (ticketNumber) => {
+    axios.post("http://localhost:8000/api/createUser", {
+      ticketnum: ticketNumber,
+      showed: false,
+      settled: false,
+    })
+      .then(() => {
+        fetchUsers();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   // Handle back navigation confirmation if input fields are filled
   const handleBackNavigation = (e) => {
@@ -45,7 +76,10 @@ function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceT
 
     // If validation passes, clear error and navigate
     setError("");
-    setCustomerServiceTicketCounter(customerServiceTicketCounter + 1); // Increment the ticket counter
+    const updatedTicketCounter = customerServiceTicketCounter + 1;
+    setCustomerServiceTicketCounter(updatedTicketCounter); 
+    handleCreateUser(`C-${String(customerServiceTicketCounter).padStart(3, '0')}`);
+    // setCustomerServiceTicketCounter(customerServiceTicketCounter + 1); // Increment the ticket counter
     navigate("/service/ticket");
   };
 

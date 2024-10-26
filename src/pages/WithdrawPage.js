@@ -96,7 +96,9 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
 
     // Clear error if everything is valid, increment ticket counter, and navigate
     setError("");
-    setWithdrawTicketCounter(withdrawTicketCounter + 1); // Increment ticket counter
+    const updatedTicketCounter = withdrawTicketCounter + 1;
+    setWithdrawTicketCounter(updatedTicketCounter); 
+    handleCreateUser(`W-${String(withdrawTicketCounter).padStart(3, '0')}`); 
     navigate("/withdraw/ticket");
   };
 

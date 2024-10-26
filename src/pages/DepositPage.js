@@ -3,12 +3,42 @@ import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import './pagestyles.css';
 import logo from "../logo.png";
+import axios from 'axios';
 
 function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Accept the counter props
   const [accountNumber, setAccountNumber] = useState("");
   const [amount, setAmount] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = () => {
+    axios.get("http://localhost:8000/api/getUsers")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleCreateUser = (ticketNumber) => {
+    axios.post("http://localhost:8000/api/createUser", {
+      ticketnum: ticketNumber,
+      showed: false,
+      settled: false,
+    })
+      .then(() => {
+        fetchUsers();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   const formatAmount = (num) => {
     return num.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -56,7 +86,10 @@ function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Acc
 
     // If all validations pass, clear error and navigate
     setError("");
-    setDepositTicketCounter(depositTicketCounter + 1); // Increment the deposit ticket counter
+    const updatedTicketCounter = depositTicketCounter + 1;
+    setDepositTicketCounter(updatedTicketCounter); 
+    handleCreateUser(`D-${String(depositTicketCounter).padStart(3, '0')}`); 
+    // setDepositTicketCounter(depositTicketCounter + 1); Increment the deposit ticket counter
     navigate("/deposit/ticket");
   };
 
