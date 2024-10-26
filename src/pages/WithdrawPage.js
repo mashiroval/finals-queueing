@@ -3,6 +3,7 @@ import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import "./pagestyles.css";
 import logo from "../logo.png";
+import axios from 'axios';
 
 // Accept ticketCounter and setTicketCounter as props
 function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
@@ -11,6 +12,35 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
   const [amount, setAmount] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = () => {
+    axios.get("http://localhost:8000/api/getUsers")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleCreateUser = (ticketNumber) => {
+    axios.post("http://localhost:8000/api/createUser", {
+      ticketnum: ticketNumber,
+      showed: false,
+      settled: false,
+    })
+      .then(() => {
+        fetchUsers();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   // Function to format the amount with commas
   const formatAmount = (num) => {
