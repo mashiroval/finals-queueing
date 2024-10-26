@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UserLayout from "../layouts/UserLayout";
 import { Link, useNavigate } from "react-router-dom";
 import './pagestyles.css';
 import logo from "../logo.png";
+import axios from 'axios';
 
 
 function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
@@ -10,6 +11,34 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
   const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [newUser, setNewUser] = useState({});
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = () => {
+    axios.get("http://localhost:8000/api/getUsers")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleCreateUser = () => {
+    axios.post("http://localhost:8000/api/createUser", newUser)
+      .then(() => {
+        fetchUsers();
+        setNewUser({ ticketnum: '', showed: '', settled: '' });
+        navigate("/register/ticket");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   const handleBackNavigation = (e) => {
     if (firstName || lastName) {
@@ -30,8 +59,13 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
     } else {
       setError(""); // Clear any errors if validation passes
       setRegisterTicketCounter(registerTicketCounter + 1); // Increment ticket counter
-      
-      navigate("/register/ticket");
+      setNewUser((prev) => ({
+        ...prev,
+        ticketnum: registerTicketCounter,
+        showed: 'false',
+        settled: 'false',
+      }));
+      handleCreateUser();
     }
 };
 
@@ -77,9 +111,7 @@ function RegisterPage({registerTicketCounter, setRegisterTicketCounter}) {
         {error && <p style={{ color: "red" }}>{error}</p>}
 
         <div>
-          <Link to="/register/ticket" onClick={handleNextClick}>
-            <button className="nbtns">NEXT</button>
-          </Link>
+            <button className="nbtns" onClick={handleNextClick}>NEXT</button>
         </div>
 
         {/* Handle back navigation confirmation */}

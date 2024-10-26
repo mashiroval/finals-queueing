@@ -7,8 +7,6 @@ import './pagestyles.css';
 
 function AdminHomePage() {
   const [users, setUsers] = useState([]);
-  const [newUser, setNewUser] = useState({});
-  const [editUser, setEditUser] = useState(null);
 
   const fetchUsers = () => {
     axios.get("http://localhost:8000/api/getUsers")

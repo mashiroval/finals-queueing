@@ -12,7 +12,7 @@ const getUsers = (req, res) => {
 const deleteUser = (req, res) => {
     UserModel.findByIdAndDelete(req.params.id)
       .then(() => {
-          console.log(`User with id: ${req.params.id} deleted successfully`);
+          console.log(`Data with id: ${req.params.id} deleted successfully`);
           res.json({ message: "User deleted" })})
       .catch(err => {
         console.error(err);
@@ -25,17 +25,18 @@ const deleteUser = (req, res) => {
     newUser.save()
       .then(user => {
       res.json(user)
-      console.log(`User with id: ${req.params.id} added successfully`);})
+      console.log(`Data added successfully`);})
       .catch(err => {
         console.error(err);
         res.status(500).json({ error: "Internal Server Error" });
       });
 
   };
+  
 const updateUser = (req, res) => {
   UserModel.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then(user => {
-        console.log(`User with id: ${req.params.id} updated successfully`);
+        console.log(`Data with id: ${req.params.id} updated successfully`);
         res.json(user)})
     .catch(err => {
       console.error(err);
