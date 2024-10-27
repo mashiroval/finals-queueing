@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
   type: String,
   ticketnum: String,
   showed: String,
-  settled: String
+  settled: Boolean
 });
 
 const UserModel = mongoose.model("Queue", UserSchema);
