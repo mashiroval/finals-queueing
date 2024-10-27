@@ -18,9 +18,9 @@ const deleteUser = (req, res) => {
         console.error(err);
         res.status(500).json({ error: "Internal Server Error" });
       });
-  };
+};
 
-  const createUser = (req, res) => {
+const createUser = (req, res) => {
     const newUser = new UserModel(req.body);
     newUser.save()
       .then(user => {
@@ -31,7 +31,7 @@ const deleteUser = (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
       });
 
-  };
+};
   
 const updateUser = (req, res) => {
   UserModel.findByIdAndUpdate(req.params.id, req.body, { new: true })

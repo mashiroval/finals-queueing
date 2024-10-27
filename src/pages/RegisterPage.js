@@ -24,6 +24,7 @@ function RegisterPage({ registerTicketCounter, setRegisterTicketCounter }) {
 
   const handleCreateUser = (ticketNumber) => {
     axios.post("http://localhost:8000/api/createUser", {
+      type: "Register",
       ticketnum: ticketNumber,
       showed: false,
       settled: false,

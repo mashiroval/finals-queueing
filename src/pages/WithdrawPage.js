@@ -26,6 +26,7 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
 
   const handleCreateUser = (ticketNumber) => {
     axios.post("http://localhost:8000/api/createUser", {
+      type: "Withdraw",
       ticketnum: ticketNumber,
       showed: false,
       settled: false,

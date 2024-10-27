@@ -24,6 +24,7 @@ function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Acc
 
   const handleCreateUser = (ticketNumber) => {
     axios.post("http://localhost:8000/api/createUser", {
+      type: "Deposit",
       ticketnum: ticketNumber,
       showed: false,
       settled: false,

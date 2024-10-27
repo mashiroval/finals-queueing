@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
+  type: String,
   ticketnum: String,
   showed: String,
   settled: String

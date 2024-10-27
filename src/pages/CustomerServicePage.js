@@ -5,7 +5,6 @@ import './pagestyles.css';
 import logo from "../logo.png";
 import axios from 'axios';
 
-
 function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceTicketCounter }) {
   const [accountNumber, setAccountNumber] = useState("");
   const [error, setError] = useState("");
@@ -24,6 +23,7 @@ function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceT
 
   const handleCreateUser = (ticketNumber) => {
     axios.post("http://localhost:8000/api/createUser", {
+      type: "Service",
       ticketnum: ticketNumber,
       showed: false,
       settled: false,
