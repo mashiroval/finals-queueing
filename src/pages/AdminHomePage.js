@@ -30,7 +30,7 @@ function AdminHomePage() {
 <div className='cardcontainer'>
         <div className='box1'>
           <h3 className="admins3">OVERVIEW</h3>
-            <iframe 
+            {/* <iframe 
               style={{
               background: '#FFFFFF',
               border: 'none',
@@ -44,7 +44,7 @@ function AdminHomePage() {
                 <p key={user._id}>
                     {user.ticketnum} - {user.showed} - {user.settled}
                 </p>
-              ))}
+              ))} */}
         </div>
 
         <div className='box2'>
