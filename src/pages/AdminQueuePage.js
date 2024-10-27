@@ -71,7 +71,7 @@ function AdminQueuePage() {
         <div className='squares4'>
         <h4 className='counter'>Counter 4</h4>
           <button className="delete">DELETE</button>
-          <button className="next" onClick={() => handleUpdateUser(editUser._id)}>NEXT</button>
+          <button className="next">NEXT</button>
           
         </div>
 
