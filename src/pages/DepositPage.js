@@ -88,7 +88,7 @@ function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Acc
     setError("");
     const updatedTicketCounter = depositTicketCounter + 1;
     setDepositTicketCounter(updatedTicketCounter); 
-    handleCreateUser(`D-${String(depositTicketCounter).padStart(3, '0')}`); 
+    handleCreateUser(`D-${String(updatedTicketCounter).padStart(3, '0')}`); 
     // setDepositTicketCounter(depositTicketCounter + 1); Increment the deposit ticket counter
     navigate("/deposit/ticket");
   };

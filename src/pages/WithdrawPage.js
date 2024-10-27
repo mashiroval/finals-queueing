@@ -98,7 +98,7 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
     setError("");
     const updatedTicketCounter = withdrawTicketCounter + 1;
     setWithdrawTicketCounter(updatedTicketCounter); 
-    handleCreateUser(`W-${String(withdrawTicketCounter).padStart(3, '0')}`); 
+    handleCreateUser(`W-${String(updatedTicketCounter).padStart(3, '0')}`); 
     navigate("/withdraw/ticket");
   };
 

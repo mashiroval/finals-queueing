@@ -78,7 +78,7 @@ function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceT
     setError("");
     const updatedTicketCounter = customerServiceTicketCounter + 1;
     setCustomerServiceTicketCounter(updatedTicketCounter); 
-    handleCreateUser(`C-${String(customerServiceTicketCounter).padStart(3, '0')}`);
+    handleCreateUser(`C-${String(updatedTicketCounter).padStart(3, '0')}`);
     // setCustomerServiceTicketCounter(customerServiceTicketCounter + 1); // Increment the ticket counter
     navigate("/service/ticket");
   };
