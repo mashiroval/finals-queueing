@@ -1,6 +1,6 @@
 const [users, setUsers] = useState([]);
-    const [newUser, setNewUser] = useState({});
-    const [editUser, setEditUser] = useState(null);
+const [newUser, setNewUser] = useState({});
+const [editUser, setEditUser] = useState(null);
 
     const handleUpdateUser = (id) => {
         axios.put(`http://localhost:8000/api/updateUser/${id}`, editUser)
