@@ -24,37 +24,34 @@ function AdminHomePage() {
 
   return (
     <div>
-      <div>
-        <NavBar/>
+      <NavBar/>
 
-<div className='cardcontainer'>
-        <div className='box1'>
-          <h3 className="admins3">OVERVIEW</h3>
-            {/* <iframe 
-              style={{
-              background: '#FFFFFF',
-              border: 'none',
-              borderRadius: '2px',
-              boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)',
-              width:'50vw',
-              height:'50vh'
-              }}
-            src="https://charts.mongodb.com/charts-project-0-kdrfole/embed/charts?id=8bd7ae8d-79c6-4386-b2a9-7fa824a5f3a3&maxDataAge=3600&theme=light&autoRefresh=true"/>
-            {users.map(user => (
-                <p key={user._id}>
-                    {user.ticketnum} - {user.showed} - {user.settled}
-                </p>
-              ))} */}
+      <div className="rows">
+        <div className='home-container' id="column">
+        <div className='boxtitle1'>
+        <h3 className="admins3">OVERVIEW</h3>
         </div>
 
-        <div className='box2'>
+        <div className='boxtitle2'>
         <h3 className="admins4">SERVING</h3>
+      
         </div>
-</div>
-        
 
-    </div>
-    </div>
+        <div className='boxcontent1'>
+          
+        </div>
+
+        <div className='boxcontent2'>
+        </div>
+
+           
+
+        </div>
+        
+      </div>
+
+      </div>
+    
   )
 }
 

@@ -65,3 +65,115 @@ nav .adminnavtext:hover span{
 /* background: linear-gradient(90deg, rgba(217,169,91,1) 8%, rgba(233,183,46,1) 50%, rgba(255,255,255,1) 100%); */
 
 
+/* NAV TV */
+
+.tvnav{
+    background: #fff;
+    backdrop-filter: blur(100px);
+    font-family: "Bebas Neue", sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 105px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+}
+
+
+.TVnav{
+    display:flex ;
+    position: absolute;
+    align-items: flex-end;
+    justify-content: flex-end;
+    left:1360px;
+    top: 5px;
+}
+
+
+
+.bbtnstv{
+    position: relative;
+    background: transparent;
+    display: block;
+    outline: none;
+    border: 0;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    width: 12rem;
+    height: auto;
+
+    left: 20px;
+    top: 25px;
+
+    width: 150px;
+}
+
+.circle{
+transition:all .45s cubic-bezier(.65,0,0.076,1) ;
+position: relative;
+display: block;
+margin: 0;
+width: 3rem;
+height: 3rem;
+background: #b9922c;
+border-radius: 1.625rem;
+
+}
+.circle .icon{
+    transition: all .45s cubic-bezier(.65,0,0.076,1) ;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.icon.arrow{
+    transition:all .45s cubic-bezier(.65,0,0.076,1) ;
+    left: .625rem;
+    width: 1.125rem;
+    height: .125rem;
+    background: none;
+}
+
+.icon.arrow::before{
+    content: "";
+    position: absolute;
+    top: -.25rem;
+    right: .0625rem;
+    left: .625rem;
+    height: .625rem;
+    border-top: .125rem solid #fff;
+    border-right: .125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.button-text{
+    transition:all .45s cubic-bezier(
+        .65,0,0.076,1
+    ) ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .75rem 0;
+    margin: 0 0 0 0.85rem;
+    color: rgba(51,51,51,0.7);
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bbtnstv:hover .circle{
+    width: 100%;
+}
+.bbtnstv:hover .icon.arrow{
+    background: #fff;
+    transform: translate(1rem,0);
+}
+
+.bbtnstv:hover .button-text{
+    color: #fff;
+}

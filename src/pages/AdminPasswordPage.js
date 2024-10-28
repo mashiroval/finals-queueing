@@ -54,16 +54,32 @@ function AdminPasswordPage() {
   };
 
   return (
-    <div className="center-container">
+    
+    <div className="main">
+
+      {/* Handle back navigation confirmation */}
       <div>
+          <Link to="/" onClick={handleBackNavigation}>
+            <button className="bbtns">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Back</span>
+            </button>
+          </Link>
+        </div>
+
+        <div className="center-container">
+
+        <div>
         <Link to={"/"} onClick={handleBackNavigation}>
           <img src={logo} width={250} height={200} alt="Logo" />
         </Link>
-      </div>
+        </div>
 
-      <div className="center-container-next">
+        <div className="center-container-next">
         <div>
-          <label>Password</label>
+          <label className="text">Password</label>
           <br />
           <input
             className="typings"
@@ -80,14 +96,17 @@ function AdminPasswordPage() {
             <p>Remaining Attempts: {maxAttempts - attempts}</p>
           </div>
         )}
-      </div>
+        </div>
 
-      <div>
+        <div>
         <button className="nbtns" onClick={handleNextClick}>
           NEXT
         </button>
-      </div>
+        </div>
+        </div>
     </div>
+    
+    
   );
 }
 

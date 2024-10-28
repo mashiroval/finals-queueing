@@ -123,7 +123,21 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
   };
 
   return (
-    <UserLayout>
+
+    <div className="main">
+    {/* Handle back navigation confirmation */}
+    <div>
+                <Link to="/user" onClick={handleBackNavigation}>
+                <button className="bbtns">
+                  <span className="circle" aria-hidden="true">
+                    <span className="icon arrow"></span>
+                  </span>
+                  <span className="button-text">Back</span>
+                  </button>
+                  </Link>
+            </div>
+
+<UserLayout>
       <div className="center-container">
 
       <div>
@@ -135,7 +149,7 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
         </div>
 
         <div>
-          <label>Account #</label>
+          <label className="text">Account #</label>
           <br />
           <input
             className="typings"
@@ -146,7 +160,7 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
           />
         </div>
         <div>
-          <label>Amount</label>
+          <label className="text">Amount</label>
           <br />
           <input
             className="typings"
@@ -165,14 +179,12 @@ function WithdrawPage({withdrawTicketCounter, setWithdrawTicketCounter}) {
           </button>
         </div>
 
-        {/* Handle back navigation confirmation */}
-        <div>
-          <Link to="/user" onClick={handleBackNavigation}>
-            <button className="nbtns">GO BACK</button>
-          </Link>
-        </div>
+    
       </div>
     </UserLayout>
+    </div>
+
+    
   );
 }
 

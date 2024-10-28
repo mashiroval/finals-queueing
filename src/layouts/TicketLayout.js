@@ -7,9 +7,9 @@ function TicketLayout({children}) {
     <div className="ticket-container">
 
     <div>
-    <Link to={"/user"}>
+   
       <img src={logo} width={250} height={200} alt="Logo" />
-    </Link>
+  
     </div>
 
     <div>
