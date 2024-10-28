@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 import logo from "../logo.png";
 import axios from 'axios';
 
 function TvPage() {
   const [users, setUsers] = useState([]);
   const [waiting, setWaiting] = useState([]);
-
   const [counterTickets, setCounterTickets] = useState({
     Register: null,
     Withdraw: null,
@@ -14,13 +13,22 @@ function TvPage() {
     Service: null,
   });
 
+  const synthRef = useRef(window.speechSynthesis);
+  const lastTicketsRef = useRef({ Register: null, Withdraw: null, Deposit: null, Service: null });
+
+  const speakText = (text) => {
+    if (synthRef.current.speaking) {
+      synthRef.current.cancel();
+    }
+    const utterance = new SpeechSynthesisUtterance(text);
+    synthRef.current.speak(utterance);
+  };
+
   const fetchUsers = () => {
     axios.get("http://localhost:8000/api/getUsers")
       .then((response) => {
         const fetchedUsers = response.data;
-  
-        console.log("Fetched Users:", fetchedUsers);
-  
+
         const waitingList = [];
         const counterAssignments = {
           Register: null,
@@ -28,10 +36,9 @@ function TvPage() {
           Deposit: null,
           Service: null,
         };
-  
+
         const unsettledUsers = fetchedUsers.filter(user => user.settled === false || user.settled === "false");
-        console.log("Unsettled Users (should be only those with settled: false):", unsettledUsers);
-  
+
         unsettledUsers.forEach(user => {
           if (!counterAssignments[user.type]) {
             counterAssignments[user.type] = user;
@@ -39,10 +46,7 @@ function TvPage() {
             waitingList.push(user);
           }
         });
-  
-        console.log("Counter Assignments:", counterAssignments);
-        console.log("Waiting List:", waitingList);
-  
+
         setCounterTickets(counterAssignments);
         setWaiting(waitingList);
       })
@@ -57,48 +61,58 @@ function TvPage() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    ["Register", "Withdraw", "Deposit", "Service"].forEach(type => {
+      const currentTicket = counterTickets[type] ? counterTickets[type].ticketnum : "No ticket";
+      const lastTicket = lastTicketsRef.current[type];
+
+      if (currentTicket !== lastTicket) {
+        lastTicketsRef.current[type] = currentTicket;
+        const message = `Counter ${type} serving ticket ${currentTicket}`;
+        speakText(message);
+      }
+    });
+  }, [counterTickets]);
+
   return (
     <div>
       <div className="vlogoadmin">
-      <Link to={"/"}>
-        <img src={logo} width={200} height={150} alt="Logo" />
-      </Link>
+        <Link to={"/"}>
+          <img src={logo} width={200} height={150} alt="Logo" />
+        </Link>
       </div>
       
       <div className='servingbox'>
-    <h3 className="admins1">SERVING NOW</h3>
-    </div>
-    
-
-  <div class="rows">
-
-  <div className='admin-container' id="column">
+        <h3 className="admins1">SERVING NOW</h3>
+      </div>
+      
       <div className="rows">
         <div className='admin-container' id="column">
-          {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
-            <div className={`squares${index + 1}`} key={type}>
-              <h4 className='counter'>Counter {index + 1}</h4>
-              <p>
-                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
-              </p>
-            </div>))}
-        </div>
-        </div>
+          <div className="rows">
+            <div className='admin-container' id="column">
+              {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
+                <div className={`squares${index + 1}`} key={type}>
+                  <h4 className='counter'>Counter {index + 1}</h4>
+                  <p>
+                    {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div id="column">
-          <div className="squares5">
-            <h3 className="admins2">WAITING</h3>
-            {waiting.map(user => (
-              <p key={user._id}>{user.ticketnum}</p>
-            ))}
+          <div id="column">
+            <div className="squares5">
+              <h3 className="admins2">WAITING</h3>
+              {waiting.map(user => (
+                <p key={user._id}>{user.ticketnum}</p>
+              ))}
+            </div>
           </div>
         </div>
-        </div>
-    
-  </div>
-      
+      </div>
     </div>
-  )
+  );
 }
 
-export default TvPage
+export default TvPage;
