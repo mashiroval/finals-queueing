@@ -82,14 +82,15 @@ function AdminHomePage() {
 
         <div className='box2'>
         <h3 className="admins4">NOW SERVING</h3>
-            <div className='admin-container' id="column">
-              {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
-                <div key={type}>
-                  <p>
-                    {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
-                  </p>
-              </div>))}
-            </div>
+        <div className='admin-container' id="column">
+          {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
+            <div className={`squares${index + 1}`} key={type}>
+              <h4 className='counter'>Counter {index + 1}</h4>
+              <p>
+                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
+              </p>
+            </div>))}
+        </div>
         </div>
 </div>
         
