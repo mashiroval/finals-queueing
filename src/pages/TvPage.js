@@ -78,8 +78,8 @@ function TvPage() {
           {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
             <div className={`squares${index + 1}`} key={type}>
               <h4 className='counter'>Counter {index + 1}</h4>
-              <p>
-                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
+              <p className="tickets">
+                {counterTickets[type] ? counterTickets[type].ticketnum : "No Ticket"}
               </p>
             </div>))}
         </div>
@@ -88,9 +88,11 @@ function TvPage() {
         <div id="column">
           <div className="squares5">
             <h3 className="admins2">WAITING</h3>
+            <div className="ticket-list">
             {waiting.map(user => (
-              <p key={user._id}>{user.ticketnum}</p>
+              <p className="ticketwaiting" key={user._id}>{user.ticketnum}</p>
             ))}
+            </div>
           </div>
         </div>
         </div>

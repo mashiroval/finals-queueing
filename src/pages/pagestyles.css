@@ -47,7 +47,6 @@ body{
 
 /*LOGO*/
 .vlogo{
-   
 }
 
 /* TICKET PAGE */
@@ -57,6 +56,13 @@ body{
     flex-wrap: wrap;
     flex-direction: column; /* Stack the elements vertically */
     align-items: center; /* Center horizontally */
+    justify-content: center;
+}
+
+.tix{
+    margin-top:-50px;
+    font-size: 120px;
+    align-items: center; 
     justify-content: center;
 }
 
@@ -178,6 +184,11 @@ body{
     box-shadow: 0 0 30px rgba(255,255,255,.4);
 }
 
+.typings,.typings::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 4;
+}
+
 
 /*NEXT AND DONE CONTAINER*/
 .center-container-next{
@@ -189,7 +200,7 @@ body{
 }
 /* FRAME BUTTONS */
 .fbtn{
-   
+
     position: relative;
     width: 450px;
     height: 112px;
@@ -405,6 +416,43 @@ position: absolute;
     flex: 50%;
 }
 
+
+/*settled & no show button*/
+
+.next, .delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width:85px;
+    height: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    border: 2px solid rgba(0,0,0,.5);
+    box-shadow: 0 0 30px rgba(255,255,255,.5);
+}
+
+.next{
+    position: absolute;
+    top: 230px;
+    margin-left: 170px;
+
+}
+
+.delete{
+    position: absolute;
+    top: 230px;
+    margin-left: 269px;
+}
+
+.tickets{
+    font-weight: bold;
+    font-size: 80px;
+    font-family: "Montserrat", sans-serif;
+}
+
 /* code for grid of 4 counters */
 
 .admin-container{
@@ -422,18 +470,16 @@ position: absolute;
 
 
     position: relative;
-    width: 500px;
+    width: 530px;
     height: 280px;
-    margin: 2rem;
+    margin: 1rem;
 
     background: transparent;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.6);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0,0,0,.5);
-
     --color: rgba(233,183,46,1);
-   
     isolation: isolate;
 }
 
@@ -476,7 +522,21 @@ position: absolute;
     
 .squares5{
     width: 300px;
-    height: 630px;
+    height: 610px;
+}
+
+.ticketwaiting{
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    margin: 1px;
+    padding: 1px;
+}
+
+.ticket-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .squares5:hover{
@@ -521,7 +581,6 @@ position: absolute;
     box-shadow: 0 0 30px rgba(0,0,0,.5);
 
     --color: rgba(233,183,46,1);
-   
     isolation: isolate;
 }
 
@@ -545,7 +604,6 @@ position: absolute;
     box-shadow: 0 0 30px rgba(0,0,0,.5);
 
     --color: rgba(233,183,46,1);
-   
     isolation: isolate;
 }
 
