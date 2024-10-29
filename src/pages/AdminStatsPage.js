@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import './pagestyles.css';
-
+import box4 from "./boxcounter4.mp4";
 function AdminStatsPage() {
   return (
     <div>
@@ -53,7 +53,8 @@ function AdminStatsPage() {
             </div>
 
             <div className='boxcontent4'>
-                  
+                  <video src={box4} width={770}height={110} type="video/mp4" autoplay muted loop>
+                  </video>
             </div>
 
           <div id="column">
