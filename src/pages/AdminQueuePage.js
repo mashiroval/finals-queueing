@@ -125,7 +125,6 @@ function AdminQueuePage() {
               <div className="queuebuttons"> 
                 <button id= "low" className="next" onClick={() => handleFinish(type)}>SETTLED</button>
                 <button id= "low" className="delete" onClick={() => handleDeleteUser(counterTickets[type]._id, type)}>NO SHOW</button>
-
               </div>
              
             </div>

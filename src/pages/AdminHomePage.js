@@ -61,44 +61,55 @@ function AdminHomePage() {
 
   return (
     <div>
-      <div>
+      
         <NavBar/>
+        <div>
+        <div className="rows">
 
-<div className='cardcontainer'>
-        <div className='box1'>
-          <h3 className="admins3">OVERVIEW</h3>
-          <iframe 
-            style={{
-              background: '#FFFFFF',
-              border: 'none',
-              borderRadius: '2px',
-              boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)',
-              width:'650px',
-              height:'500px'
-            }}
-            src="https://charts.mongodb.com/charts-project-0-kdrfole/embed/charts?id=8dcb76b1-b0f2-4e21-9c53-1241d89293f7&maxDataAge=3600&theme=light&autoRefresh=true"
-            />
-        </div>
+          <div className='home-container'>
+            <div className='boxtitle1'>
+            <h3 className="admins3">OVERVIEW</h3>
+            </div>
 
-        <div className='box2'>
-        <h3 className="admins4">NOW SERVING</h3>
-        <div className='admin-container' id="column">
-          {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
-            <div className={`squares${index + 1}`} key={type}>
-              <h4 className='counter'>Counter {index + 1}</h4>
-              <p>
-                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
-              </p>
-            </div>))}
-        </div>
-        </div>
 
-        <div className='boxcontent2'>
-        </div>
+            <div className='boxtitle2'id='servingtext' >
+            <h3 className="admins4">SERVING</h3>
+            </div>
 
-           
+            <div className='boxcontent1'>
+              <iframe 
+              style={{
+                background: '#FFFFFF',
+                border: 'none',
+                borderRadius: '2px',
+                boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)',
+                width: '450px',
+                height:'500px', bottom:'50px'
+              }}
+              src="https://charts.mongodb.com/charts-project-0-kdrfole/embed/charts?id=8dcb76b1-b0f2-4e21-9c53-1241d89293f7&maxDataAge=3600&theme=light&autoRefresh=true"
+              />
 
-        </div>
+            </div>
+
+              
+            <div className='boxcontent2'>
+                <div className='admin-container' id="column">
+              {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
+                <div className={`chome${index + 1}`} key={type}>
+                  <h4 className='homecounter'>Counter {index + 1}</h4>
+                  <p class='homecountertext'>
+                    {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
+                  </p>
+                </div>))}
+
+            </div>
+            </div>
+
+        
+          </div>
+        
+      </div>
+
         
       </div>
 
