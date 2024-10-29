@@ -92,8 +92,8 @@ function AdminPasswordPage() {
         </div>
         {error && (
           <div style={{ color: "red" }}>
-            <p>{error}</p>
-            <p>Remaining Attempts: {maxAttempts - attempts}</p>
+            <p class="pworderror">{error}</p>
+            <p class="pworderror">Remaining Attempts: {maxAttempts - attempts}</p>
           </div>
         )}
         </div>

@@ -9,7 +9,7 @@ function DepositTicketPage({ depositTicketCounter }) { // Accept the deposit tic
   return (
     <TicketLayout>
       <div className="center-container">
-        <h2>{ticketNumber}</h2> {/* Display the formatted ticket number */}
+        <h1 className='tix'>{ticketNumber}</h1> {/* Display the formatted ticket number */}
 
         <div className='center-container-next'>
           <Link to="/user">

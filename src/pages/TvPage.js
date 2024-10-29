@@ -85,7 +85,6 @@ function TvPage() {
       
       <div className="rows">
         <div className='admin-container' id="column">
-<<<<<<< HEAD
           <div className="rows">
             <div className='admin-container' id="column">
               {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
@@ -106,24 +105,6 @@ function TvPage() {
                 <p className="waitingtext" key={user._id}>{user.ticketnum}</p>
               ))}
             </div>
-=======
-          {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
-            <div className={`squares${index + 1}`} key={type}>
-              <h4 className='counter'>Counter {index + 1}</h4>
-              <p>
-                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
-              </p>
-            </div>))}
-        </div>
-        </div>
-
-        <div id="column">
-          <div className="squares5">
-            <h3 className="admins2">WAITING</h3>
-            {waiting.map(user => (
-              <p key={user._id}>{user.ticketnum}</p>
-            ))}
->>>>>>> parent of 06eb3e5 (Refrac: UI)
           </div>
         </div>
       </div>

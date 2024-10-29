@@ -79,12 +79,12 @@ function AdminHomePage() {
             <div className='boxcontent1'>
               <iframe 
               style={{
-                background: '#FFFFFF',
-                border: 'none',
-                borderRadius: '2px',
-                boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)',
+                background: 'transparent',
+                border: '5px',
+                borderRadius: '20px',
+                boxShadow: '0 0 30px rgba(0,0,0,.5)',
                 width: '450px',
-                height:'500px', bottom:'50px'
+                height:'500px', bottom:'50px', color: '#000'
               }}
               src="https://charts.mongodb.com/charts-project-0-kdrfole/embed/charts?id=8dcb76b1-b0f2-4e21-9c53-1241d89293f7&maxDataAge=3600&theme=light&autoRefresh=true"
               />

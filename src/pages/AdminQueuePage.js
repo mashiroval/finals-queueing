@@ -90,12 +90,12 @@ function AdminQueuePage() {
     setCounterTickets(prev => ({ ...prev, [type]: nextTicket || null }));
     setWaiting(newWaiting);
     
-    // const sayText = nextTicket 
-    //   ? `Next in queue for ${type}: Ticket ${nextTicket.ticketnum}`
-    //   : `No more tickets in queue for ${type}`;
+    const sayText = nextTicket 
+      ? `Next in queue for ${type}: Ticket ${nextTicket.ticketnum}`
+      : `No more tickets in queue for ${type}`;
     
-    // const speech = new SpeechSynthesisUtterance(sayText);
-    // window.speechSynthesis.speak(speech);
+    const speech = new SpeechSynthesisUtterance(sayText);
+    window.speechSynthesis.speak(speech);
   };
 
   useEffect(() => {
@@ -115,39 +115,22 @@ function AdminQueuePage() {
           {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
             <div className={`squares${index + 1}`} key={type}>
               <h4 className='counter'>Counter {index + 1}</h4>
-<<<<<<< HEAD
-
-              <div className="centerticket"> 
-                <p class="adminticket">
-                  {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
-                </p>
-              </div>
-
-              <div className="queuebuttons"> 
-                <button id= "low" className="next" onClick={() => handleFinish(type)}>SETTLED</button>
-                <button id= "low" className="delete" onClick={() => handleDeleteUser(counterTickets[type]._id, type)}>NO SHOW</button>
-              </div>
-             
-=======
-              <p>
+              <p className="tickets">
                 {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
               </p>
               <button className="next" onClick={() => handleFinish(type)}>SETTLED</button>
               <button className="delete" onClick={() => handleDeleteUser(counterTickets[type]._id, type)}>NO SHOW</button>
->>>>>>> parent of 06eb3e5 (Refrac: UI)
             </div>
           ))}
         </div>
         <div id="column">
           <div className="squares5">
             <h3 className="admins2">WAITING</h3>
+            <div className="ticket-list">
             {waiting.map(user => (
-<<<<<<< HEAD
-              <p  class="waitingtext" key={user._id}>{user.ticketnum}</p>
-=======
-              <p key={user._id}>{user.ticketnum}</p>
->>>>>>> parent of 06eb3e5 (Refrac: UI)
+              <p className="ticketwaiting" key={user._id}>{user.ticketnum}</p>
             ))}
+            </div>
           </div>
         </div>
       </div>
