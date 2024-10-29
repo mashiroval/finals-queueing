@@ -83,12 +83,19 @@ function AdminQueuePage() {
       setSettled(prevSettled => [...prevSettled, finishedTicket]);
       handleUpdateUser(finishedTicket._id);
     }
-
+  
     const nextTicket = waiting.find(user => user.type === type);
     const newWaiting = waiting.filter(user => user !== nextTicket);
     
     setCounterTickets(prev => ({ ...prev, [type]: nextTicket || null }));
     setWaiting(newWaiting);
+    
+    const sayText = nextTicket 
+      ? `Next in queue for ${type}: Ticket ${nextTicket.ticketnum}`
+      : `No more tickets in queue for ${type}`;
+    
+    const speech = new SpeechSynthesisUtterance(sayText);
+    window.speechSynthesis.speak(speech);
   };
 
   useEffect(() => {

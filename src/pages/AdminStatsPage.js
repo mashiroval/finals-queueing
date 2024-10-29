@@ -11,23 +11,32 @@ function AdminStatsPage() {
 
      <div className='statscalen' id ="columnstats">
       <h2>CUSTOMER COUNT</h2>
-      <h3>10,000</h3>
-      </div>
+      <iframe 
+        style={{
+          background: '#f8f7f5',
+          border: 'none',
+          borderRadius: '2px',
+          boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)',
+          width:'50vw',
+          height:'40vh'
+        }}
+      src="https://charts.mongodb.com/charts-project-0-kdrfole/embed/charts?id=287b0cc6-eb37-462c-9a98-9d25d3670e0e&maxDataAge=3600&theme=light&autoRefresh=true"
+      /></div>
 
       <div className='statssummary' id ="columnstats">
       <h1>SUMMARY</h1>
 
       <iframe 
         style={{
-        background: '#21313C',
-        border: 'none',
-        borderRadius: '2px',
-        boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)',
-        width:'50vw',
-        height:'50vh'
-      }}
-      src="https://charts.mongodb.com/charts-project-0-kdrfole/embed/charts?id=a5ac17e8-a130-4740-933c-e5e49a57c9f5&maxDataAge=3600&theme=dark&autoRefresh=true"      /></div>
-
+          background: '#f8f7f5',
+          border: 'none',
+          borderRadius: '2px',
+          boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)',
+          width:'50vw',
+          height:'50vh'
+        }}
+      src="https://charts.mongodb.com/charts-project-0-kdrfole/embed/charts?id=6179e18e-92f4-4b9b-a285-490721fb25c8&maxDataAge=3600&theme=light&autoRefresh=true"     
+      /></div>
      </div>
       
 

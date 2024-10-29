@@ -252,7 +252,31 @@ position: absolute;
     z-index: -1;
 }
 
-.boxcontent1 , .boxcontent2{
+.boxcontent1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 450px;
+    height: 110px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    
+    left:0;
+    top:0;
+    isolation: isolate;
+}
+
+.boxcontent2{
     display: flex;
     justify-content: center;
     align-items: center;
