@@ -9,7 +9,7 @@ function RegisterTicketPage({ registerTicketCounter }) { // Accept ticketCounter
   return (
     <TicketLayout>
       <div className="center-container">
-        <h1 className='tix'>{ticketNumber}</h1> {/* Display the ticket number */}
+        <h2>{ticketNumber}</h2> {/* Display the ticket number */}
         <div className='center-container-next'>
           <Link to="/user">
             <button className="dbtns">DONE</button>

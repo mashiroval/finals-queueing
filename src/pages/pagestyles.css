@@ -313,13 +313,6 @@ position: absolute;
     justify-content: center;
 }
 
-.tix{
-    margin-top:-50px;
-    font-size: 120px;
-    align-items: center; 
-    justify-content: center;
-}
-
 /* USER PAGE */
 .user-container{
     display: flex;
@@ -436,13 +429,16 @@ position: absolute;
     font-size: 25px;
     margin-bottom: 1vh;
     box-shadow: 0 0 30px rgba(255,255,255,.4);
+<<<<<<< HEAD
     margin-top: 10px;
+=======
+>>>>>>> parent of 06eb3e5 (Refrac: UI)
 }
 
 
 /* FRAME BUTTONS */
 .fbtn{
-
+   
     position: relative;
     width: 400px;
     height: 95px;
@@ -644,7 +640,10 @@ border-radius: 1.625rem;
     flex: 50%;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 06eb3e5 (Refrac: UI)
 /* code for grid of 4 counters */
 
 .admin-container{
@@ -677,16 +676,18 @@ border-radius: 1.625rem;
 
 
     position: relative;
-    width: 530px;
+    width: 500px;
     height: 280px;
-    margin: 1rem;
+    margin: 2rem;
 
     background: transparent;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.6);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0,0,0,.5);
+
     --color: rgba(233,183,46,1);
+   
     isolation: isolate;
 }
 
@@ -729,21 +730,7 @@ border-radius: 1.625rem;
     
 .squares5{
     width: 300px;
-    height: 610px;
-}
-
-.ticketwaiting{
-    display: inline-block;
-    width: 50px;
-    text-align: center;
-    margin: 1px;
-    padding: 1px;
-}
-
-.ticket-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 630px;
 }
 
 .squares5:hover{
@@ -792,6 +779,7 @@ border-radius: 1.625rem;
     box-shadow: 0 0 30px rgba(0,0,0,.5);
 
     --color: rgba(233,183,46,1);
+   
     isolation: isolate;
 }
 
@@ -815,6 +803,7 @@ border-radius: 1.625rem;
     box-shadow: 0 0 30px rgba(0,0,0,.5);
 
     --color: rgba(233,183,46,1);
+   
     isolation: isolate;
 }
 

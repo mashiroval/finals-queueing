@@ -115,6 +115,7 @@ function AdminQueuePage() {
           {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
             <div className={`squares${index + 1}`} key={type}>
               <h4 className='counter'>Counter {index + 1}</h4>
+<<<<<<< HEAD
 
               <div className="centerticket"> 
                 <p class="adminticket">
@@ -127,17 +128,26 @@ function AdminQueuePage() {
                 <button id= "low" className="delete" onClick={() => handleDeleteUser(counterTickets[type]._id, type)}>NO SHOW</button>
               </div>
              
+=======
+              <p>
+                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
+              </p>
+              <button className="next" onClick={() => handleFinish(type)}>SETTLED</button>
+              <button className="delete" onClick={() => handleDeleteUser(counterTickets[type]._id, type)}>NO SHOW</button>
+>>>>>>> parent of 06eb3e5 (Refrac: UI)
             </div>
           ))}
         </div>
         <div id="column">
           <div className="squares5">
             <h3 className="admins2">WAITING</h3>
-            <div className="ticket-list">
             {waiting.map(user => (
+<<<<<<< HEAD
               <p  class="waitingtext" key={user._id}>{user.ticketnum}</p>
+=======
+              <p key={user._id}>{user.ticketnum}</p>
+>>>>>>> parent of 06eb3e5 (Refrac: UI)
             ))}
-            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ function CustomerServiceTicketPage({ customerServiceTicketCounter }) {
   return (
     <TicketLayout>
       <div className="center-container">
-        <h1 className='tix'>{ticketNumber}</h1>
+        <h2>{ticketNumber}</h2>
 
         <div className='center-container-next'>
           <Link to="/user">
