@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+
+/* WEBSITE ESSENTIALS */
+
 .App {
     width: 1440px;
     height: 1024px;
@@ -8,8 +11,10 @@
 body{
     background-color: #F8F8F7;
 }
+
 *{
     box-sizing: border-box;
+
 }
 
 /* BACKGROUND PICTURE */
@@ -23,7 +28,8 @@ body{
     height: 100vh; /* Full viewport height to center vertically */
 }
 
-/*CENTER*/
+/*CENTER div for buttons and textfields*/
+
 .center-container{ 
     display: flex;
     align-items: center;
@@ -34,7 +40,7 @@ body{
     width: 650px;
 }
 
-/* MIDDLE PANEL */
+/* MIDDLE PANEL for logo and text*/
 
 .middlepanel{
     display: flex;
@@ -44,10 +50,258 @@ body{
     justify-content: center;
 }
 
+/*NEXT AND DONE CONTAINER*/
+.center-container-next{
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    margin-top: 10vh;
+}
 
 /*LOGO*/
 .vlogo{
+   
 }
+
+.vlogoadmin{
+   position: relative;
+   right:40px;
+}
+
+/* GENERAL TEXT */
+
+h1{
+    margin-bottom: 40px;
+}
+.text{
+    font-weight: bold;
+    margin-left:20px;
+}
+
+.admins3,.admins4{
+    position: absolute;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    overflow: hidden;
+}
+
+.counter{
+    position: absolute;
+    bottom:210px;
+    right: 360px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: large;
+    letter-spacing: 5px;
+    overflow: hidden;
+    
+}
+
+.homecounter{
+    position: absolute;
+    bottom:125px;
+    right: 285px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: large;
+    letter-spacing: 5px;
+    overflow: hidden;
+}
+
+.admins1{
+    position: static;
+    top:10px;
+    letter-spacing: 5px;
+    overflow: hidden;
+}
+
+.admins2{
+    position: absolute;
+    top:10px;
+    letter-spacing: 5px;
+    overflow: hidden;
+}
+
+
+.select{
+
+}
+
+.tvticket{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.adminticket{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 50px;
+    width: 350px;
+    height: 150px;
+    
+}
+
+.homecountertext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 30px;
+    width: 350px;
+    height: 150px;
+}
+
+
+.waitingtext{
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    margin-top: 10vh;
+    overflow: hidden;
+}
+
+/* --------------------------------------- */
+
+
+/* ADMIN PAGE */
+
+/* HOME */
+
+.cardcontainer {
+    display: flex;
+    position: relative;
+    align-self: flex-start;
+}
+
+
+.boxtitle1, .boxtitle2{
+
+    /* blur effect */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 450px;
+    height: 60px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    --color: rgba(233,183,46,1);
+    isolation: isolate;
+
+}
+
+#servingtext{
+    margin-left: -15px;
+}
+
+
+
+.boxtitle1::before, .boxtitle2::before, .boxtitle1::after, .boxtitle2::after{
+content: "";
+position: absolute;
+}
+
+.boxtitle1::before, .boxtitle2::before{
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(
+        var(--color)0deg,
+        transparent 60deg,
+        transparent 180deg,
+        var(--color)180deg,
+        transparent 240deg
+    );
+    inset: -50%;
+    z-index: -2;
+    animation: border 6s linear infinite;
+
+}
+
+@keyframes border {
+    to{
+        transform: rotateZ(-360deg);
+    }
+}
+
+.boxtitle1::after, .boxtitle2::after{
+    --inset: 0.25rem;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 20px;
+    inset: var(--inset);
+    z-index: -1;
+}
+
+.boxcontent1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 450px;
+    height: 500px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    
+    left:0;
+    bottom:50px;
+    isolation: isolate;
+}
+
+.boxcontent2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+
+
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    margin: 2rem;
+
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+
+    left:-50px;
+    margin-left: 550px;
+    bottom: 10px;
+    isolation: isolate;
+}
+
+
+
+
+
 
 /* TICKET PAGE */
 
@@ -176,34 +430,22 @@ body{
     height: 66px;
     flex-shrink: 0;
     border-radius: 50px;
-    border: 1px solid #000;
+    border: 1px solid gray;
     color: #000;
-    background-color: #F8F8F7;
+    background-color: #eeee;
     font-size: 25px;
     margin-bottom: 1vh;
     box-shadow: 0 0 30px rgba(255,255,255,.4);
-}
-
-.typings,.typings::-webkit-input-placeholder {
-    font-size: 14px;
-    line-height: 4;
+    margin-top: 10px;
 }
 
 
-/*NEXT AND DONE CONTAINER*/
-.center-container-next{
-    display: flex;
-    flex-direction: column; /* Stack the elements vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    margin-top: 10vh;
-}
 /* FRAME BUTTONS */
 .fbtn{
 
     position: relative;
-    width: 450px;
-    height: 112px;
+    width: 400px;
+    height: 95px;
     
     font-size: 23px;
     font-family: "Bebas Neue", sans-serif;
@@ -221,10 +463,10 @@ body{
 .nbtns{
    
     position: relative;
-    width: 200px;
-    height: 80px;
+    width: 130px;
+    height: 40px;
     
-    font-size: 23px;
+    font-size: 22px;
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -234,6 +476,7 @@ body{
     outline: none;
     cursor: pointer;
     overflow: hidden;
+
 }
 
 /*DONE BUTTONS*/
@@ -255,92 +498,99 @@ body{
     
 }
 
-/* ADMIN PAGE */
-
-/* HOME */
-
-.cardcontainer {
-    display:inline-flex;
-    flex-direction: row;
-
-}
-
-/*texts*/
-
-.admins3,.admins4{
-    position: absolute;
-    right: 570px;
-    top: 10px;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 20px;
-    letter-spacing: 5px;
-    overflow: hidden;
-}
-
-.box1, .box2  {
-
-    /* blur effect */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    overflow: hidden;
+/* BACK BUTTON */
 
 
+.bbtns{
     position: relative;
-    width: 700px;
-    height: 580px;
-    margin: 2rem;
-
     background: transparent;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.6);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    display: block;
+    outline: none;
+    border: 0;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    width: 12rem;
+    height: auto;
 
-    --color: rgba(233,183,46,1);
-    
-    left:0;
-    top:0;
-    isolation: isolate;
+    left: 20px;
+    top: 35px;
 
+    width: 150px;
 }
 
-.box1::before, .box2::before, .box1::after, .box2::after{
-content: "";
-position: absolute;
-}
-
-.box1::before, .box2::before{
-    width: 200%;
-    height: 200%;
-    background-image: conic-gradient(
-        var(--color)0deg,
-        transparent 60deg,
-        transparent 180deg,
-        var(--color)180deg,
-        transparent 240deg
-    );
-    inset: -50%;
-    z-index: -2;
-    animation: border 8s linear infinite;
+.circle{
+transition:all .45s cubic-bezier(.65,0,0.076,1) ;
+position: relative;
+display: block;
+margin: 0;
+width: 3rem;
+height: 3rem;
+background: #b9922c;
+border-radius: 1.625rem;
 
 }
-
-@keyframes border {
-    to{
-        transform: rotateZ(-360deg);
-    }
+.circle .icon{
+    transition: all .45s cubic-bezier(.65,0,0.076,1) ;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
 }
 
-.box1::after, .box2::after{
-    --inset: 0.25rem;
-    background-color: #fff;
-    opacity: 1;
-    border-radius: 20px;
-    inset: var(--inset);
-    z-index: -1;
+.icon.arrow{
+    transition:all .45s cubic-bezier(.65,0,0.076,1) ;
+    left: .625rem;
+    width: 1.125rem;
+    height: .125rem;
+    background: none;
 }
+
+.icon.arrow::before{
+    content: "";
+    position: absolute;
+    top: -.25rem;
+    right: .0625rem;
+    left: .625rem;
+    height: .625rem;
+    border-top: .125rem solid #fff;
+    border-right: .125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.button-text{
+    transition:all .45s cubic-bezier(
+        .65,0,0.076,1
+    ) ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .75rem 0;
+    margin: 0 0 0 0.85rem;
+    color: rgba(51,51,51,0.7);
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bbtns:hover .circle{
+    width: 100%;
+}
+.bbtns:hover .icon.arrow{
+    background: #fff;
+    transform: translate(1rem,0);
+}
+
+.bbtns:hover .button-text{
+    color: #fff;
+}
+
+
 
 /* QUEUE */
 
@@ -350,8 +600,9 @@ position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 
-    width:85px;
+    width:90px;
     height: 25px;
     font-family: "Bebas Neue", sans-serif;
     font-size: 18px;
@@ -366,30 +617,6 @@ position: absolute;
     
 }
 
-.counter{
-    position: absolute;
-    bottom:210px;
-    right: 360px;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: large;
-    letter-spacing: 5px;
-    overflow: hidden;
-    
-}
-
-.admins1{
-    position: static;
-    top:10px;
-    letter-spacing: 5px;
-    overflow: hidden;
-}
-
-.admins2{
-    position: absolute;
-    top:10px;
-    letter-spacing: 5px;
-    overflow: hidden;
-}
 
 
 /* serving box */
@@ -404,6 +631,7 @@ position: absolute;
     top:10px;
 }
 
+
 /* code for div placement side by side*/
 .row{
     display: flex;
@@ -417,42 +645,6 @@ position: absolute;
 }
 
 
-/*settled & no show button*/
-
-.next, .delete{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width:85px;
-    height: 25px;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
-    border-radius: 20px;
-    border: 2px solid rgba(0,0,0,.5);
-    box-shadow: 0 0 30px rgba(255,255,255,.5);
-}
-
-.next{
-    position: absolute;
-    top: 230px;
-    margin-left: 170px;
-
-}
-
-.delete{
-    position: absolute;
-    top: 230px;
-    margin-left: 269px;
-}
-
-.tickets{
-    font-weight: bold;
-    font-size: 80px;
-    font-family: "Montserrat", sans-serif;
-}
-
 /* code for grid of 4 counters */
 
 .admin-container{
@@ -460,6 +652,21 @@ position: absolute;
     grid-template-columns:repeat(2,1fr);
     justify-content: space-evenly;
 }
+
+.home-container{
+    display: inline-grid;
+    grid-template-columns:repeat(2,1fr);
+    position: absolute;
+    max-height: 650px;
+
+}
+.chomecontainer{
+    display: inline-grid;
+    grid-template-columns:repeat(2,1fr);
+    position: absolute;
+   
+}
+
 
 .squares1, .squares2, .squares3, .squares4, .squares5{
     display: flex;
@@ -546,20 +753,24 @@ position: absolute;
     
 }
 
+
+#low{
+    left:10px;
+
+}
+
 /* STATS */
 
 .row-stats{
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 #column{
     float: left;
     flex: 50%;
+    position: relative;
 }
-
-
 
 .statscalen{
     display: flex;
@@ -607,3 +818,29 @@ position: absolute;
     isolation: isolate;
 }
 
+/* counters in admin home */
+
+.chome1, .chome2, .chome3, .chome4{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+
+
+    position: relative;
+    width: 420px;
+    height: 200px;
+    margin: 1.5rem;
+    
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+
+    --color: rgba(233,183,46,1);
+    
+    left: 15px;
+    isolation: isolate;
+}

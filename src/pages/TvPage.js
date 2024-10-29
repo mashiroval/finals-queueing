@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 import logo from "../logo.png";
 import axios from 'axios';
+import NavTV from "../components/NavTV";
 
 function TvPage() {
   const [users, setUsers] = useState([]);
@@ -76,11 +77,7 @@ function TvPage() {
 
   return (
     <div>
-      <div className="vlogoadmin">
-        <Link to={"/"}>
-          <img src={logo} width={200} height={150} alt="Logo" />
-        </Link>
-      </div>
+      <NavTV/>
       
       <div className='servingbox'>
     <h3 className="admins1">SERVING NOW</h3>
@@ -95,8 +92,8 @@ function TvPage() {
           {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
             <div className={`squares${index + 1}`} key={type}>
               <h4 className='counter'>Counter {index + 1}</h4>
-              <p className="tickets">
-                {counterTickets[type] ? counterTickets[type].ticketnum : "No Ticket"}
+              <p class="tvticket">
+                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
               </p>
             </div>))}
         </div>
@@ -107,13 +104,14 @@ function TvPage() {
             <h3 className="admins2">WAITING</h3>
             <div className="ticket-list">
             {waiting.map(user => (
-              <p className="ticketwaiting" key={user._id}>{user.ticketnum}</p>
+              <p className="waitingtext" key={user._id}>{user.ticketnum}</p>
             ))}
-            </div>
           </div>
         </div>
         </div>
-      </div>
+    
+  </div>
+      
     </div>
   );
 }

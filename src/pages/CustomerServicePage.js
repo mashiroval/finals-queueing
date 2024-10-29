@@ -92,9 +92,26 @@ function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceT
   };
 
   return (
+    
     <UserLayout>
-      <div className="center-container">
 
+    <div className="main">
+      {/* Handle back navigation confirmation */}
+      <div>
+
+          <Link to="/user" onClick={handleBackNavigation}>
+          <button className="bbtns">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Back</span>
+            </button>
+          </Link>
+        </div>
+
+
+      <div className="center-container">
+      
       <div>
           <img src={logo} width={250} height={200} alt="Logo" />
       </div>
@@ -104,7 +121,7 @@ function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceT
         </div>
 
         <div>
-          <label>Account #</label>
+          <label className="text">Account #</label>
           <br />
           <input
             className="typings"
@@ -123,13 +140,9 @@ function CustomerServicePage({ customerServiceTicketCounter, setCustomerServiceT
           </button>
         </div>
 
-        {/* Handle back navigation confirmation */}
-        <div>
-          <Link to="/user" onClick={handleBackNavigation}>
-            <button className="nbtns">GO BACK</button>
-          </Link>
-        </div>
       </div>
+  
+    </div>
     </UserLayout>
   );
 }

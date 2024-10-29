@@ -113,18 +113,37 @@ function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Acc
 
   return (
     <UserLayout>
-      <div className="center-container">
-        
-      <div>
+      <div class="main"> 
+
+        {/* Handle back navigation confirmation */}
+        <div>
+
+        <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
+        rel="stylesheet"
+        />
+          <Link to="/user" onClick={handleBackNavigation}>
+            <button className="bbtns">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Back</span>
+            </button>
+          </Link>
+        </div>
+
+        <div className="center-container">
+
+        <div>
           <img src={logo} width={250} height={200} alt="Logo" />
-      </div>
+        </div>
 
         <div>
           <h1>DEPOSIT</h1>
         </div>
 
         <div>
-          <label>Account #</label>
+          <label className="text">Account #</label>
           <br />
           <input
             className="typings"
@@ -135,7 +154,7 @@ function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Acc
           />
         </div>
         <div>
-          <label>Amount</label>
+          <label className="text">Amount</label>
           <br />
           <input
             className="typings"
@@ -154,12 +173,11 @@ function DepositPage({ depositTicketCounter, setDepositTicketCounter }) { // Acc
           </button>
         </div>
 
-        <div>
-          <Link to="/user" onClick={handleBackNavigation}>
-            <button className="nbtns">GO BACK</button>
-          </Link>
+
         </div>
+
       </div>
+     
     </UserLayout>
   );
 }

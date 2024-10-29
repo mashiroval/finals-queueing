@@ -12,9 +12,7 @@ function Frame1() {
      
         <div class="middlepanel"> 
           <div className="vlogo">
-            <Link to={"/"}>
               <img src={logo} width={250} height={200} alt="Logo" />
-            </Link>
             </div>
 
             <h3 className="select">Select</h3>

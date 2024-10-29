@@ -67,8 +67,28 @@ function RegisterPage({ registerTicketCounter, setRegisterTicketCounter }) {
   };
 
   return (
-    <UserLayout>
+
+    <div className="main">
+
+      {/* Handle back navigation confirmation */}
+      <div>
+          <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+          <Link to="/user" onClick={handleBackNavigation}>
+          <button className="bbtns">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Back</span>
+            </button>
+          </Link>
+        </div>
+
+<UserLayout>
       <div className="center-container">
+
         <div>
           <img src={logo} width={250} height={200} alt="Logo" />
         </div>
@@ -78,7 +98,7 @@ function RegisterPage({ registerTicketCounter, setRegisterTicketCounter }) {
         </div>
 
         <div>
-          <label>First Name</label>
+          <label className="text" >First Name</label>
           <br />
           <input
             className="typings"
@@ -91,7 +111,7 @@ function RegisterPage({ registerTicketCounter, setRegisterTicketCounter }) {
         </div>
 
         <div>
-          <label>Last Name</label>
+          <label className="text" >Last Name</label>
           <br />
           <input
             className="typings"
@@ -109,13 +129,10 @@ function RegisterPage({ registerTicketCounter, setRegisterTicketCounter }) {
           <button className="nbtns" onClick={handleNextClick}>NEXT</button>
         </div>
 
-        <div>
-          <Link to="/user" onClick={handleBackNavigation}>
-            <button className="nbtns">GO BACK</button>
-          </Link>
-        </div>
       </div>
     </UserLayout>
+    </div>
+    
   );
 }
 

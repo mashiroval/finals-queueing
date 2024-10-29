@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import logo from "../logo.png";
+import lightv from "./lightlogo.png";
+
 
 export default function NavBar() {
   return (
@@ -11,7 +13,7 @@ export default function NavBar() {
         <div class="navdiv">
               <div className="vlogoadmin">
                 <Link to={"/"}>
-                  <img src={logo} width={120} height={95} alt="Logo" />
+                  <img src={lightv} width={175} height={85} alt="Logo" />
                 </Link>
                 </div>
 
