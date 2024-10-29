@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 import logo from "../logo.png";
 import axios from 'axios';
-import NavTV from "../components/NavTV";
 
 function TvPage() {
   const [users, setUsers] = useState([]);
@@ -77,41 +76,41 @@ function TvPage() {
 
   return (
     <div>
-      <NavTV/>
+      <div className="vlogoadmin">
+        <Link to={"/"}>
+          <img src={logo} width={200} height={150} alt="Logo" />
+        </Link>
+      </div>
       
       <div className='servingbox'>
-    <h3 className="admins1">SERVING NOW</h3>
-    </div>
-    
-
-  <div class="rows">
-
-  <div className='admin-container' id="column">
+        <h3 className="admins1">SERVING NOW</h3>
+      </div>
+      
       <div className="rows">
         <div className='admin-container' id="column">
-          {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
-            <div className={`squares${index + 1}`} key={type}>
-              <h4 className='counter'>Counter {index + 1}</h4>
-              <p class="tvticket">
-                {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
-              </p>
-            </div>))}
-        </div>
-        </div>
+          <div className="rows">
+            <div className='admin-container' id="column">
+              {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
+                <div className={`squares${index + 1}`} key={type}>
+                  <h4 className='counter'>Counter {index + 1}</h4>
+                  <p>
+                    {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div id="column">
-          <div className="squares5">
-            <h3 className="admins2">WAITING</h3>
-            <div className="ticket-list">
-            {waiting.map(user => (
-              <p className="waitingtext" key={user._id}>{user.ticketnum}</p>
-            ))}
+          <div id="column">
+            <div className="squares5">
+              <h3 className="admins2">WAITING</h3>
+              {waiting.map(user => (
+                <p key={user._id}>{user.ticketnum}</p>
+              ))}
+            </div>
           </div>
         </div>
-        </div>
-    
-  </div>
-      
+      </div>
     </div>
   );
 }
