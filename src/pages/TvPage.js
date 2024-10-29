@@ -75,30 +75,32 @@ function TvPage() {
   <div className='admin-container' id="column">
       <div className="rows">
         <div className='admin-container' id="column">
-          {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
-            <div className={`squares${index + 1}`} key={type}>
-              <h4 className='counter'>Counter {index + 1}</h4>
-              <p className="tickets">
-                {counterTickets[type] ? counterTickets[type].ticketnum : "No Ticket"}
-              </p>
-            </div>))}
-        </div>
-        </div>
+          <div className="rows">
+            <div className='admin-container' id="column">
+              {["Register", "Withdraw", "Deposit", "Service"].map((type, index) => (
+                <div className={`squares${index + 1}`} key={type}>
+                  <h4 className='counter'>Counter {index + 1}</h4>
+                  <p class="tvticket">
+                    {counterTickets[type] ? counterTickets[type].ticketnum : "No ticket"}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div id="column">
-          <div className="squares5">
-            <h3 className="admins2">WAITING</h3>
-            <div className="ticket-list">
-            {waiting.map(user => (
-              <p className="ticketwaiting" key={user._id}>{user.ticketnum}</p>
-            ))}
+          <div id="column">
+            <div className="squares5">
+              <h3 className="admins2">WAITING</h3>
+              {waiting.map(user => (
+                <p className="waitingtext" key={user._id}>{user.ticketnum}</p>
+              ))}
             </div>
           </div>
         </div>
         </div>
     
   </div>
-      
+      </div>
     </div>
   )
 }
